@@ -1,0 +1,48 @@
+Les dossiers "bin" & "src" contiennent le code.
+Le  dossier  "data" contient la base de donnée.
+Le  dossier  "doc" contient la javadoc, des captures d'ecran d'exemples d'execution et le dossier de synthèse.
+Le  dossier  "exe" contient l'executable espeaks (qu'il faut executer sur un environnement linux après l'avoir installé).
+
+
+
+Pour compiler le programme en .jar executable, en ligne de commande  à partir du dossier racine executer la commande "make".
+
+
+
+Une commande est de la forme :
+
+		java -jar project.jar "Det_fs N_fs Adj_fs V_ind3s" 1000 0.10
+     ou 	java -jar project.jar "Det_fs N_fs Adj_fs V_ind3s Det_fp N_fp Adj_fp" 750 0.18
+     ou 	java -jar project.jar "Det_fs âme Adj_fs V_ind3s Det_fp déesses Adj_fp" 750 0.18
+
+
+
+	* l'argument entre guillements est la description en Categories élémentaires pour l'output
+	* le premier argument numérique est la jauge maximale du nombre de combinaisons permises
+	* le second argument numérique, inclu entre 0 (meilleure note) et 1 (moins bonne note) est la qualité minimale que doit satisfaire une chaîne pour être retenu pour la suite
+	
+
+ATTENTION :
+
+	Pour les deux arguments numérique, + grand => plus lent ET +petit => moins de résultats
+
+	Pour l'argument syntaxique, l'orthographe des noms de Catégories est cruciale. Les espaces également (espace entre chaque nom de Catégorie, pas d'espace après le dernie). Les orthographes doivent respecter la forme des fichiers se trouvant dans datas/lexique/Categories. Nous les résumons ici :
+
+		Det_fs
+		Det_fp
+		Det_ms
+		Det_mp
+
+		N_ms
+		N_mp
+		N_fs
+		N_fp
+
+		Adj_fs
+		Adj_fp
+
+		V_ind3s
+
+		(NB : les adjectifs masculins n'ont pas encore été dréssés)
+
+	Il est à priori possible de "souffler un mot" au programme au lieu d'une catégorie. C'est ce qu'il se passera si l'orthographe n'est pas reconnu comme un fichier de la base. Cette optionalité (que nous n'avons pas pu tester à cette heure), ne fonctionne qu'à condition d'etre sur un environnement linux, avec espeaks installé.
